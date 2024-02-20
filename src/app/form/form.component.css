@@ -56,24 +56,3 @@ select {
   display: flex;
   justify-content: center;
 }
-
-.btn-submit {
-  border-style: none;
-  cursor: pointer;
-  background-color: var(--secondary);
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: var(--primary);
-  font-size: 1.25rem;
-  font-family: "Yusei Magic", sans-serif;
-  transition: 0.3s;
-}
-
-.btn-submit:hover {
-  text-shadow: 0px 1px 15px var(--primary);
-}
-
-.btn-submit:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
