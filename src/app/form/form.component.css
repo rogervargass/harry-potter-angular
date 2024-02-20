@@ -56,3 +56,7 @@ select {
   display: flex;
   justify-content: center;
 }
+
+select {
+  cursor: pointer;
+}
