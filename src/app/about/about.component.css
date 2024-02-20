@@ -1,0 +1,15 @@
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 1180px;
+}
+
+.img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
