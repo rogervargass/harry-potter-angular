@@ -25,7 +25,6 @@ export class FormComponent {
   house = this.registrationForm.get('house');
 
   onSubmit() {
-    console.log(this.registrationForm.value);
     alert('Mal feito, feito!');
     this.registrationForm.reset();
   }
