@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --text: #ebedf0;
+  --background: #202a43;
+  --primary: #c3872c;
+  --secondary: #28407d;
+  --accent: #315ed2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  /* font-family: "Griffy", system-ui; */
+  font-family: "Yusei Magic", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+header,
+h1 {
+  font-family: "Metal Mania", system-ui;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}

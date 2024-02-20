@@ -1,0 +1,13 @@
+<header>
+  <nav class="container">
+    <ul>
+      <li [class.active]="isActive('/home')"><a routerLink="/">Home</a></li>
+      <li [class.active]="isActive('/school-form')">
+        <a routerLink="/school-form">Formulário</a>
+      </li>
+      <li [class.active]="isActive('/about')">
+        <a routerLink="/about">Sobre</a>
+      </li>
+    </ul>
+  </nav>
+</header>
