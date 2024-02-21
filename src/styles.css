@@ -11,7 +11,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   min-height: 100vh;
-  /* font-family: "Griffy", system-ui; */
   font-family: "Yusei Magic", sans-serif;
   background-color: var(--background);
   color: var(--text);

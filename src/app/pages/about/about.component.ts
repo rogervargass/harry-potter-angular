@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Curiosity } from '../types/curiosities';
+import { Curiosity } from '../../types/curiosities';
 
 @Component({
   selector: 'app-about',

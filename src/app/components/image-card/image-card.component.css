@@ -1,0 +1,30 @@
+.card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #fff;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.img-container {
+  width: 100%;
+  max-width: 440px;
+  background-color: #fff;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-description {
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.25rem;
+  font-weight: 500;
+}

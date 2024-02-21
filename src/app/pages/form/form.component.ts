@@ -1,32 +1,25 @@
 import { Component } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HogwartsFormComponent } from '../../components/hogwarts-form/hogwarts-form.component';
+import { RegistrationHogwartsForm } from '../../types/forms';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HogwartsFormComponent],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
 export class FormComponent {
-  registrationForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    birthDate: new FormControl('', Validators.required),
-    house: new FormControl('', Validators.required),
-  });
+  name = '';
+  birthDate = '';
+  house = '';
 
-  name = this.registrationForm.get('name');
-  birthDate = this.registrationForm.get('birthDate');
-  house = this.registrationForm.get('house');
-
-  onSubmit() {
-    alert('Mal feito, feito!');
-    this.registrationForm.reset();
+  getFormValues(form: RegistrationHogwartsForm) {
+    console.log(form);
+    this.name = form.name;
+    this.birthDate = form.birthDate;
+    this.house = form.house;
   }
 
   // getHouse() {

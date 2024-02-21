@@ -1,0 +1,22 @@
+<main class="container">
+  <h1>Formulário de Inscrição para Hogwarts</h1>
+  <section class="content">
+    <app-hogwarts-form
+      (registration)="getFormValues($event)"
+    ></app-hogwarts-form>
+    <div class="divider"></div>
+    <section class="preview">
+      <h2>Sua Matricula</h2>
+      <p>
+        Nome: <span id="previewNome">{{ name }}</span>
+      </p>
+      <p>
+        Data de Nascimento:
+        <span id="previewDataNascimento">{{ birthDate }}</span>
+      </p>
+      <p>
+        Casa Desejada: <span id="previewCasa">{{ house }}</span>
+      </p>
+    </section>
+  </section>
+</main>

@@ -1,0 +1,8 @@
+<main class="container">
+  <h1>Galeria de fotos</h1>
+  <section class="photos">
+    <div class="photo" *ngFor="let photo of photos">
+      <app-image-card [photo]="photo"></app-image-card>
+    </div>
+  </section>
+</main>
