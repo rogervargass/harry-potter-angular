@@ -1,0 +1,12 @@
+<main class="container">
+  <h1>Responda as Perguntas sobre Harry Potter!</h1>
+  <section class="quiz-section">
+    <button *ngIf="!question" (click)="startGame()">Iniciar</button>
+    <h2 *ngIf="question">{{ question }}</h2>
+    <div class="quiz-answers">
+      <button *ngFor="let answer of getAlternatives(question)">
+        {{ answer }}
+      </button>
+    </div>
+  </section>
+</main>
