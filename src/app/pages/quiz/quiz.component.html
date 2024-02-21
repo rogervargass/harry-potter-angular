@@ -1,12 +1,21 @@
 <main class="container">
-  <h1>Responda as Perguntas sobre Harry Potter!</h1>
-  <section class="quiz-section">
-    <button *ngIf="!question" (click)="startGame()">Iniciar</button>
-    <h2 *ngIf="question">{{ question }}</h2>
+  <h1>Responda as Perguntas sobre Harry Potter</h1>
+  <button *ngIf="!question" (click)="startGame()">Iniciar</button>
+  <section *ngIf="question" class="quiz-section">
+    <h2>{{ question }}</h2>
     <div class="quiz-answers">
-      <button *ngFor="let answer of getAlternatives(question)">
-        {{ answer }}
-      </button>
+      <ol type="A">
+        <li
+          class="alternative"
+          *ngFor="let answer of getAlternatives(question)"
+        >
+          {{ answer }}
+        </li>
+      </ol>
     </div>
+    <section class="btns-container">
+      <button (click)="backQuestion()">Voltar</button>
+      <button (click)="nextQuestion()">Próxima</button>
+    </section>
   </section>
 </main>

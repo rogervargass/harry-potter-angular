@@ -1,0 +1,20 @@
+.quiz-answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.alternative {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.alternative:hover {
+  background-color: var(--secondary);
+}

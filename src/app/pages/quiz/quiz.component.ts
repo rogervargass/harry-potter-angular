@@ -39,6 +39,26 @@ export class QuizComponent {
     this.question = this.questions[0].question;
   }
 
+  nextQuestion() {
+    const currentIndex = this.questions.findIndex(
+      (item) => item.question === this.question
+    );
+    const nextIndex = currentIndex + 1;
+    if (nextIndex < this.questions.length) {
+      this.question = this.questions[nextIndex].question;
+    }
+  }
+
+  backQuestion() {
+    const currentIndex = this.questions.findIndex(
+      (item) => item.question === this.question
+    );
+    const backIndex = currentIndex - 1;
+    if (backIndex >= 0) {
+      this.question = this.questions[backIndex].question;
+    }
+  }
+
   getAlternatives(question: string) {
     const currentQuestion = this.questions.find(
       (item) => item.question === question
