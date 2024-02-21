@@ -34,7 +34,7 @@ export class QuizComponent {
       answer: 'Dragão',
     },
   ];
-  userAnswers: { answer: string; index: number }[] = [];
+  userAnswers: string[] = [];
 
   score: number = 0;
 
@@ -48,12 +48,8 @@ export class QuizComponent {
     this.score = 0;
   }
 
-  selectAnswer(answer: string, index: number) {
-    const response = {
-      answer,
-      index,
-    };
-    this.userAnswers.push(response);
+  selectAnswer(answer: string) {
+    this.userAnswers.push(answer);
     this.verifyAnswers(this.question, answer);
     this.nextQuestion();
   }

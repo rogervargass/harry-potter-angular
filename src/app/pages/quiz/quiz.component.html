@@ -12,8 +12,8 @@
       <ol type="A">
         <li
           class="alternative"
-          *ngFor="let answer of getAlternatives(question); index as i"
-          (click)="selectAnswer(answer, i)"
+          *ngFor="let answer of getAlternatives(question)"
+          (click)="selectAnswer(answer)"
         >
           {{ answer }}
         </li>
