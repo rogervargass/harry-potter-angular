@@ -34,9 +34,22 @@ export class QuizComponent {
       answer: 'Dragão',
     },
   ];
+  userAnswers: { answer: string; index: number }[] = [];
+
+  score: number = 0;
 
   startGame() {
     this.question = this.questions[0].question;
+  }
+
+  selectAnswer(answer: string, index: number) {
+    const response = {
+      answer,
+      index,
+    };
+    this.userAnswers.push(response);
+    this.verifyAnswers(this.question, answer);
+    this.nextQuestion();
   }
 
   nextQuestion() {
@@ -56,6 +69,22 @@ export class QuizComponent {
     const backIndex = currentIndex - 1;
     if (backIndex >= 0) {
       this.question = this.questions[backIndex].question;
+    }
+  }
+
+  verifyAnswers(question: string, userAnswer: string) {
+    const currentQuestion = this.questions.find(
+      (item) => item.question === question
+    );
+
+    if (!currentQuestion) {
+      return;
+    }
+
+    if (currentQuestion.answer === userAnswer) {
+      this.score += 10;
+    } else {
+      this.score -= 5;
     }
   }
 
