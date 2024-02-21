@@ -16,7 +16,6 @@ export class FormComponent {
   house = '';
 
   getFormValues(form: RegistrationHogwartsForm) {
-    console.log(form);
     this.name = form.name;
     this.birthDate = this.formatDate(form.birthDate);
     this.house = this.getHouse(form.house);
