@@ -42,6 +42,12 @@ export class QuizComponent {
     this.question = this.questions[0].question;
   }
 
+  restartGame() {
+    this.question = '';
+    this.userAnswers = [];
+    this.score = 0;
+  }
+
   selectAnswer(answer: string, index: number) {
     const response = {
       answer,

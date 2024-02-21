@@ -23,8 +23,18 @@
       <button class="btn-default" (click)="backQuestion()">Voltar</button>
       <button class="btn-default" (click)="nextQuestion()">Próxima</button>
     </section>
+    <p>Pontuação:</p>
+    <p>resposta certe: 10 pontos</p>
+    <p>resposta errada: -5 pontos</p>
   </section>
   <h3 *ngIf="userAnswers.length >= questions.length">
     Pontuação final: {{ score }}
   </h3>
+  <button
+    class="btn-default"
+    *ngIf="userAnswers.length >= questions.length"
+    (click)="restartGame()"
+  >
+    Recomeçar quiz
+  </button>
 </main>
