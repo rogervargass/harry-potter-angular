@@ -18,31 +18,31 @@ export class FormComponent {
   getFormValues(form: RegistrationHogwartsForm) {
     console.log(form);
     this.name = form.name;
-    this.birthDate = form.birthDate;
-    this.house = form.house;
+    this.birthDate = this.formatDate(form.birthDate);
+    this.house = this.getHouse(form.house);
   }
 
-  // getHouse() {
-  //   switch (this.house?.value) {
-  //     case 'gryffindor':
-  //       this.house?.setValue('Grifinória');
-  //       break;
+  getHouse(house: string) {
+    switch (house) {
+      case 'gryffindor':
+        return 'Grifinória';
 
-  //     case 'slytherin':
-  //       this.house?.setValue('Sonserina');
-  //       break;
+      case 'slytherin':
+        return 'Sonserina';
 
-  //     case 'ravenclaw':
-  //       this.house?.setValue('Corvinal');
-  //       break;
+      case 'ravenclaw':
+        return 'Corvinal';
 
-  //     case 'hufflepuff':
-  //       this.house?.setValue('Lufa-Lufa');
-  //       break;
+      case 'hufflepuff':
+        return 'Lufa-Lufa';
 
-  //     default:
-  //       return 'Casa não encontrada!';
-  //       break;
-  //   }
-  // }
+      default:
+        return 'Casa não encontrada!';
+    }
+  }
+
+  formatDate(date: string) {
+    const [year, month, day] = date.split('-');
+    return `${day}/${month}/${year}`;
+  }
 }

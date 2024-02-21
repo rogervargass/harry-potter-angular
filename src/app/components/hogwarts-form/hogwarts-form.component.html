@@ -5,19 +5,20 @@
     <input type="text" id="name" formControlName="name" />
   </div>
 
-  <div class="field">
-    <label for="birthDate">Data de Nascimento</label>
-    <input type="date" id="birthDate" formControlName="birthDate" />
-  </div>
+  <div class="field-group">
+    <div class="field">
+      <label for="birthDate">Data de Nascimento</label>
+      <input type="date" id="birthDate" formControlName="birthDate" />
+    </div>
 
-  <div class="field">
-    <label for="house">Casa Desejada</label>
-    <select id="house" formControlName="house">
-      <option value="Grifinória">Grifinória</option>
-      <option value="Sonserina">Sonserina</option>
-      <option value="Corvinal">Corvinal</option>
-      <option value="Lufa-Lufa">Lufa-Lufa</option>
-    </select>
+    <div class="field">
+      <label for="house">Casa Desejada</label>
+      <select id="house" formControlName="house">
+        <option *ngFor="let house of options" [ngValue]="house.value">
+          {{ house.label }}
+        </option>
+      </select>
+    </div>
   </div>
 
   <div class="btn-submit-container">

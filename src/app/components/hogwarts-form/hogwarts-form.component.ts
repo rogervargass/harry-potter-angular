@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import {
   FormControl,
@@ -10,11 +11,18 @@ import { RegistrationHogwartsForm } from '../../types/forms';
 @Component({
   selector: 'app-hogwarts-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './hogwarts-form.component.html',
   styleUrl: './hogwarts-form.component.css',
 })
 export class HogwartsFormComponent {
+  options = [
+    { value: 'gryffindor', label: 'Grifinória' },
+    { value: 'slytherin', label: 'Sonserina' },
+    { value: 'ravenclaw', label: 'Corvinal' },
+    { value: 'hufflepuff', label: 'Lufa-Lufa' },
+  ];
+
   registrationForm = new FormGroup({
     name: new FormControl('', Validators.required),
     birthDate: new FormControl('', Validators.required),

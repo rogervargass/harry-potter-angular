@@ -1,9 +1,11 @@
 <main class="container">
   <h1>Formulário de Inscrição para Hogwarts</h1>
   <section class="content">
-    <app-hogwarts-form
-      (registration)="getFormValues($event)"
-    ></app-hogwarts-form>
+    <div class="form-registration">
+      <app-hogwarts-form
+        (registration)="getFormValues($event)"
+      ></app-hogwarts-form>
+    </div>
     <div class="divider"></div>
     <section class="preview">
       <h2>Sua Matricula</h2>
