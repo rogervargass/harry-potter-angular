@@ -1,0 +1,41 @@
+<main class="container">
+  <h1>Conheça todos os filmes do mundo de Harry Potter</h1>
+  <div *ngIf="movies.length === 0" class="loading-container">
+    <img
+      width="300"
+      src="../../../assets/images/giphy.gif"
+      alt="uma varinha do mundo bruxo em quanto as imagens carregam"
+    />
+  </div>
+  <section class="movies-list">
+    <div *ngFor="let movie of movies" class="movie-container">
+      <div class="movie-poster">
+        <img
+          [src]="movie.attributes.poster"
+          [alt]="movie.attributes.title"
+          width="100%"
+          height="100%"
+        />
+      </div>
+      <div class="movie-info">
+        <h2>{{ movie.attributes.title }}</h2>
+        <p>
+          {{ movie.attributes.summary }}
+        </p>
+        <div>
+          <p>Dirigido por: {{ movie.attributes.directors[0] }}</p>
+          <p>
+            Lançado em: {{ formatMovieDate(movie.attributes.release_date) }}
+          </p>
+          <button
+            aria-label="Botão para redirecionar para o trailer do filme no youtube"
+            class="btn-default"
+            (click)="pushToTrailer(movie.attributes.trailer)"
+          >
+            Assista o trailer
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,36 @@
+.movies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movie-container {
+  display: flex;
+  gap: 20px;
+}
+
+.movie-info {
+  width: 100%;
+  max-width: 800px;
+}
+
+.movie-info p {
+  text-align: justify;
+}
+
+.movie-poster {
+  width: 100%;
+  max-width: 400px;
+  heuiht: auto;
+}
+
+.movie-poster img {
+  object-fit: cover;
+}
+
+.loading-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

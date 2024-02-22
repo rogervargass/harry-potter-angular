@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import QUESTIONS_JSON from '../../data/questions.json';
+import { Question } from '../../types/quiz';
 
 @Component({
   selector: 'app-quiz',
@@ -9,31 +11,10 @@ import { Component } from '@angular/core';
   styleUrl: './quiz.component.css',
 })
 export class QuizComponent {
+  constructor() {}
+
   question = '';
-  questions = [
-    {
-      question: 'Qual é o nome do melhor amigo de Harry Potter?',
-      alternatives: [
-        'Neville Longbottom',
-        'Ron Weasley',
-        'Cedric Diggory',
-        'Draco Malfoy',
-      ],
-      answer: 'Ron Weasley',
-    },
-    {
-      question:
-        'Qual é a casa em Hogwarts conhecida por sua astúcia e ambição?',
-      alternatives: ['Grifinória', 'Sonserina', 'Corvinal', 'Lufa-Lufa'],
-      answer: 'Sonserina',
-    },
-    {
-      question:
-        'Qual é a criatura mágica que guarda o banco de Gringotes em Londres?',
-      alternatives: ['Hipogrifo', 'Dementadores', 'Elfos Domésticos', 'Dragão'],
-      answer: 'Dragão',
-    },
-  ];
+  questions: Question[] = [...QUESTIONS_JSON];
   userAnswers: string[] = [];
 
   score: number = 0;

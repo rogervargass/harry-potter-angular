@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HogwartsFormComponent } from '../../components/hogwarts-form/hogwarts-form.component';
 import { RegistrationHogwartsForm } from '../../types/forms';
+import { formatDate } from '../../utils/date';
 
 @Component({
   selector: 'app-form',
@@ -19,7 +20,7 @@ export class FormComponent {
 
   getFormValues(form: RegistrationHogwartsForm) {
     this.name = form.name;
-    this.birthDate = this.formatDate(form.birthDate);
+    this.birthDate = formatDate(form.birthDate);
     this.house = this.getHouse(form.house);
     const [year] = form.birthDate.split('-');
     const currentYear = new Date().getFullYear();
@@ -44,10 +45,5 @@ export class FormComponent {
       default:
         return 'Casa não encontrada!';
     }
-  }
-
-  formatDate(date: string) {
-    const [year, month, day] = date.split('-');
-    return `${day}/${month}/${year}`;
   }
 }
