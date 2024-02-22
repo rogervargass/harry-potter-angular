@@ -15,9 +15,17 @@ export class QuizComponent {
 
   question = '';
   questions: Question[] = [...QUESTIONS_JSON];
-  userAnswers: string[] = [];
+  userAnswers: { question: string; answer: string }[] = [];
 
   score: number = 0;
+
+  isChosenAlternative(question: string, alternative: string): boolean {
+    return (
+      this.userAnswers.find(
+        (item) => item.question === question && item.answer === alternative
+      ) !== undefined
+    );
+  }
 
   startGame() {
     this.question = this.questions[0].question;
@@ -29,8 +37,13 @@ export class QuizComponent {
     this.score = 0;
   }
 
-  selectAnswer(answer: string) {
-    this.userAnswers.push(answer);
+  selectAnswer(question: string, answer: string) {
+    if (this.userAnswers.find((item) => item.question === question)) {
+      this.userAnswers = this.userAnswers.filter(
+        (item) => item.question !== question
+      );
+    }
+    this.userAnswers.push({ question, answer });
     this.verifyAnswers(this.question, answer);
     this.nextQuestion();
   }

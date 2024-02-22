@@ -11,9 +11,13 @@
     <div class="quiz-answers">
       <ol type="A">
         <li
-          class="alternative"
+          [ngClass]="
+            isChosenAlternative(question, answer)
+              ? 'alternative-chosen alternative'
+              : 'alternative'
+          "
           *ngFor="let answer of getAlternatives(question)"
-          (click)="selectAnswer(answer)"
+          (click)="selectAnswer(question, answer)"
         >
           {{ answer }}
         </li>
